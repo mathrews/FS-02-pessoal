@@ -3,6 +3,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    background-color: black;
 }
     
 .logo{
@@ -11,8 +12,8 @@ body{
     border-radius: 18px;
     background-color: #ab226d;
     position: relative;
-    animation: mover  2s 0s reverse ease both running;
-
+    overflow: hidden;
+    animation: logo infinite alternate 2s;
 }
 
 .logo .maiorq{
@@ -22,6 +23,7 @@ body{
     top: 50%;
     left: 10px;
     transform: translateY(-50%) rotate(45deg);
+    animation: maiorQ infinite alternate 2s;
 }
 .logo .maiorq::after,
 .logo .maiorq::before{
@@ -46,4 +48,89 @@ body{
     position: absolute;
     bottom: 30px;
     right: 20px;
+    animation: olho1 infinite alternate 2s;
+}
+
+.logo .underline2{
+    width: 25px;
+    height: 7px;
+    background-color: white;
+    position: absolute;
+    top: 28%;
+    right: 20px;
+    visibility: hidden;
+    animation: olho2 infinite alternate 2s;
+}
+
+@keyframes logo {
+    0%{
+        top: inherit;
+        left: inherit;
+    }
+    49%{
+        top: inherit;
+        left: inherit;
+    }
+    50%{
+        rotate: -90deg;
+    }
+    100%{
+        rotate: -90deg;
+    }
+}
+
+@keyframes maiorQ {
+    0%{
+        transform: translateY(-50%) rotate(45deg);
+        top: 50%;
+        left: 10px;
+    }
+    50%{
+        rotate: -180deg;
+        top: 50%;
+        left: 16px;
+    }
+    99%{
+        top: 20%;
+        left: 16px;
+        rotate: -180deg;
+    }
+    100%{
+        top: 20%;
+        left: 16px;
+        rotate: -180deg;
+    }
+}
+
+@keyframes olho1 {
+    0%{
+        width: 25px;
+        height: 7px;
+    }
+    50%{
+        width: 0px;
+        height: 7px;
+    }
+    100%{
+        width: 25px;
+        height: 7px;
+    }
+}
+
+@keyframes olho2 {
+    0%{
+        visibility: hidden;
+        width: 0px;
+        height: 7px;
+    }
+    50%{
+        visibility: visible;
+        width: 0px;
+        height: 7px;
+    }
+    100%{
+        visibility: visible;
+        width: 25px;
+        height: 7px;
+    }
 }
