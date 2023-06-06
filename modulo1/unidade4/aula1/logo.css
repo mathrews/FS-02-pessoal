@@ -13,7 +13,7 @@ body{
     background-color: #ab226d;
     position: relative;
     overflow: hidden;
-    animation: logo infinite alternate 2s;
+    animation: logo 8 alternate 2s;
 }
 
 .logo .maiorq{
@@ -23,7 +23,7 @@ body{
     top: 50%;
     left: 10px;
     transform: translateY(-50%) rotate(45deg);
-    animation: maiorQ infinite alternate 2s;
+    animation: maiorQ 8 alternate 2s;
 }
 .logo .maiorq::after,
 .logo .maiorq::before{
@@ -48,7 +48,7 @@ body{
     position: absolute;
     bottom: 30px;
     right: 20px;
-    animation: olho1 infinite alternate 2s;
+    animation: olho1 8 alternate 2s;
 }
 
 .logo .underline2{
@@ -59,7 +59,7 @@ body{
     top: 28%;
     right: 20px;
     visibility: hidden;
-    animation: olho2 infinite alternate 2s;
+    animation: olho2 8 alternate 2s;
 }
 
 @keyframes logo {
