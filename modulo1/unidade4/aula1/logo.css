@@ -1,9 +1,16 @@
-body{
+.sect1{
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: black;
+}
+.sect2{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #585656;
 }
     
 .logo{
@@ -60,6 +67,24 @@ body{
     right: 20px;
     visibility: hidden;
     animation: olho2 8 alternate 2s;
+}
+
+.logo2{
+    width: 100px;
+    height: 100px;
+    border-radius: 18px;
+    background-color: #ab226d;
+    position: relative;
+    overflow: hidden;
+}
+
+.logo2 .maiorq2{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%) rotate(45deg);
 }
 
 @keyframes logo {
