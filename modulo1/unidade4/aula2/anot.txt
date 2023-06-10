@@ -1,0 +1,17 @@
+MEDIA QUERIES:
+
+- Ajustes visuais do css
+
+- Trabalham com breakpoints: 1024, 768, 600
+
+MANEIRAS: desktop => mobile
+          mobile => desktop
+
+- Only screen{
+    -somente para telas digitais
+}
+- Only print {
+    -somente impressão de impressoras
+}
+
+VERIFICAR TAMANHO DE IMAGENS PARA OTIMIZAR MELHOR O SITE

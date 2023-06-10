@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>aula 02</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="navbar">
+        <nav>
+            <h2>LOGO</h2>
+            <ul>
+                <li><a href="#!">Home</a></li>
+                <li><a href="#!">Sobre</a></li>
+                <li><a href="#!">Serviços</a></li>
+                <li><a href="#!">Contato</a></li>
+            </ul>
+        </nav>
+        <button id="btn" class="animate__animated animate__bounce">Clique aqui</button>
+    </div>
+    <div class="container">
+        <div class="box"><h3>1</h3></div>
+        <div class="box"><h3>2</h3></div>
+        <div class="box"><h3>3</h3></div>
+        <div class="box"><h3>4</h3></div>
+    </div>
+    <script>
+        let gaveta = document.querySelector('.navbar nav ul')
+        btn.onclick = function(){
+            gaveta.classList.add('active');
+            // btn.classList.add('animate__bounce');
+            // setTimeout(function(){
+            //     btn.classList.remove('animate__bounce');
+            // }, 1000)
+        }
+    </script>
+</body>
+</html>
