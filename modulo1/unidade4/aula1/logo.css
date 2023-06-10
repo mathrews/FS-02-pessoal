@@ -1,9 +1,26 @@
-body{
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    list-style: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.sect1{
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: black;
+}
+.sect2{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #585656;
 }
     
 .logo{
@@ -13,7 +30,7 @@ body{
     background-color: #ab226d;
     position: relative;
     overflow: hidden;
-    animation: logo infinite alternate 2s;
+    animation: logo 8 alternate 2s;
 }
 
 .logo .maiorq{
@@ -23,7 +40,7 @@ body{
     top: 50%;
     left: 10px;
     transform: translateY(-50%) rotate(45deg);
-    animation: maiorQ infinite alternate 2s;
+    animation: maiorQ 8 alternate 2s;
 }
 .logo .maiorq::after,
 .logo .maiorq::before{
@@ -48,7 +65,7 @@ body{
     position: absolute;
     bottom: 30px;
     right: 20px;
-    animation: olho1 infinite alternate 2s;
+    animation: olho1 8 alternate 2s;
 }
 
 .logo .underline2{
@@ -59,7 +76,7 @@ body{
     top: 28%;
     right: 20px;
     visibility: hidden;
-    animation: olho2 infinite alternate 2s;
+    animation: olho2 8 alternate 2s;
 }
 
 @keyframes logo {
@@ -134,3 +151,55 @@ body{
         height: 7px;
     }
 }
+
+.logo2{
+    width: 100px;
+    height: 100px;
+    border-radius: 18px;
+    background-color: #ab226d;
+    position: relative;
+    overflow: hidden;
+    animation: logo2 2s ease-in-out infinite linear;
+}
+
+.logo2 .maiorq2{
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%) rotate(45deg);
+}
+.logo2 .maiorq2::after,
+.logo2 .maiorq2::before{
+    content: "";
+    width: 30px;
+    height: 8px;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.logo2 .maiorq2::before{
+    width: 8px;
+    height: 30px;
+    left: initial;
+    right: 0;
+}
+.logo2 .underline2{
+    width: 25px;
+    height: 7px;
+    background-color: white;
+    position: absolute;
+    bottom: 30px;
+    right: 20px;
+}
+
+@keyframes logo2{
+    0%{
+        top: inherit;
+        left: inherit;
+    }
+
+}
+
