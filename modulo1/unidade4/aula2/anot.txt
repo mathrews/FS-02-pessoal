@@ -7,6 +7,8 @@ MEDIA QUERIES:
 MANEIRAS: desktop => mobile
           mobile => desktop
 
+MEDIA TYPES:
+
 - Only screen{
     -somente para telas digitais
 }
@@ -15,4 +17,11 @@ MANEIRAS: desktop => mobile
 }
 
 (VERIFICAR TAMANHO DE IMAGENS PARA OTIMIZAR MELHOR O SITE)
+
+MEDIA FEATURES:
+
+- São as características de mídia, exemplo: dispositivos em portrait e landscape
+
+- portrait e landscape: media="screen and (orientation: portrait)"; media="screen and (orientation: landscape)" 
+
 
