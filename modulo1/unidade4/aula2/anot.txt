@@ -25,3 +25,8 @@ MEDIA FEATURES:
 - portrait e landscape: media="screen and (orientation: portrait)"; media="screen and (orientation: landscape)" 
 
 
+PASSO A PASSO: 
+
+1 - *Configuração pra media query nas meta tags*
+
+2 - * *
