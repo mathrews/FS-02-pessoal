@@ -27,9 +27,9 @@
         <div class="box"><h3>4</h3></div>
     </div>
     <script>
-        let gaveta = document.querySelector('.navbar nav ul')
+        let gaveta = document.querySelector('article > header > section .navbar nav ul')
         btn.onclick = function(){
-            gaveta.classList.add('active');
+            gaveta.classList.toggle('active');
             // btn.classList.add('animate__bounce');
             // setTimeout(function(){
             //     btn.classList.remove('animate__bounce');
