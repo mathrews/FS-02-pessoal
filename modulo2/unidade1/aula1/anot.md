@@ -26,7 +26,7 @@
 
 # Constantes 
 
-- sempre em caixa baixa
+- sempre em caixa alta
 
 # Algorítimos
 

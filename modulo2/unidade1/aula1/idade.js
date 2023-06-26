@@ -5,7 +5,7 @@ confirmar.onclick = function(){
         // alert("Você pode entrar");
         window.location.href = 'bebidas.html'; 
     } else {
-        alert("Não pode entrar")
+        alert("Não pode entrar");
     }
 }
 
