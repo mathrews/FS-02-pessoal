@@ -34,13 +34,20 @@ mes.onchange = function(){
 
 let data = new Date(); //pega a data do server
 
-// let anoBi = for(let i = data.getFullYear(); i > ((data.getFullYear() - 101) % 4 === 0); i--){
-
-// }
-
 for(let i = data.getFullYear(); i > (data.getFullYear() - 101); i--){
     ano.innerHTML += `<option>${i}</option>`;
 }
 
 let diasPorMesBi = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
+
+ano.onchange = function(){
+    for(let i = '2020'; i % 4 === 0; i++){
+        console.log('Esse ano é bissexto');
+
+        dia.innerHTML = '';
+        for(let i = 1; i <= diasPorMesBi[mes.value]; i++){
+            dia.innerHTML += `<option>${i}</option>`;
+        }
+    }
+}
