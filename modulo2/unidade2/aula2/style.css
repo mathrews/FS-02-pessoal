@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#container {
+    width: 300px;
+    border-radius: 5px;
+    border: 1px solid #999;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+#container h1 {
+    font-size: 55px;
+}
+
+#container #acao {
+    width: 100%;
+    border-radius: 5px;
+    background-color: green;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 46px;
+    height: 46px;
+    border: 0;
+    cursor: pointer;
+    transition-duration: 300ms;
+}
+
+#container #acao[estado = 'i'] {
+    background-color: #26d126;
+}
+
+#container #acao[estado = 'p'] {
+    background-color: #d12626;
+}
+
+#container #acao[estado = 'c'] {
+    background-color: #a926d1;
+}
+
+#container .setup {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+#container .setup input {
+    height: 40px;
+    width: calc(33% - 8px);
+    padding-left: 8px;
+}
+
+#container #tempo {
+    width: 100%;
+    height: 10px;
+    background-color: #928c8c60;
+}
+
+#container #tempo #tempoCorrido {
+    width: 0px;
+    height: 10px;
+    background-color: blueviolet;
+    transition: all ease 200ms;
+}

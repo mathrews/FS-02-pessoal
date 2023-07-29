@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula02</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- <div id="tempo"></div>
+    <button id="pararTempo">parar</button>
+    <button id="continuarTempo">continuar</button> -->
+
+    <div id="container">
+        <div id="tempo">
+            <div id="tempoCorrido"></div>
+        </div>
+        <h1>
+            <span id="hora">00</span>:
+            <span id="minuto">00</span>:
+            <span id="segundo">00</span>
+        </h1>
+        <button id="acao" estado="i">Iniciar</button>
+        <div class="setup">
+            <input type="number" min="0" id="pomodoroTime" placeholder="pomodoro">
+            <input type="number" min="0" id="shortPauseTime" placeholder="descanso curto">
+            <input type="number" min="0" id="longPauseTime" placeholder="descanso longo">
+        </div>
+    </div>
+    <script src="js/scripts.js"></script>
+</body>
+</html>
