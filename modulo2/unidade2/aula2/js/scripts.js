@@ -50,7 +50,7 @@ acao.onclick = () => {
         case 'i':
             acao.setAttribute('estado', 'p')
             acao.innerHTML = `Parar`
-            setInterval(() => {
+            i_contarSegundos = setInterval(() => {
                 contarSegundos();
             }, 1000)
         break;
@@ -61,6 +61,7 @@ acao.onclick = () => {
         case 'c':
             acao.setAttribute('estado', 'p')
             acao.innerHTML = `Parar`
+            clearInterval(i_contarSegundos);
         break;
     }
 }
