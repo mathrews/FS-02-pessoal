@@ -27,4 +27,29 @@ var acessos = function () {
     }
 };
 acessos();
-document.write("Entradas:<br/>Manha:".concat(contadorManha, "<br/>Tarde:").concat(contadorTarde, "<br/>Noite:").concat(contadorNoite));
+var horarioMaisAcessado = function () {
+    if (contadorManha > contadorTarde && contadorManha > contadorNoite) {
+        return 'manhã.';
+    }
+    else if (contadorTarde > contadorManha && contadorTarde > contadorNoite) {
+        return 'a tarde.';
+    }
+    else if (contadorNoite > contadorManha && contadorNoite > contadorTarde) {
+        return 'a noite.';
+    }
+    if (contadorManha == contadorTarde) {
+        if (contadorTarde == contadorNoite) {
+            return 'todos';
+        }
+        else {
+            return 'manhã e tarde';
+        }
+    }
+    else if (contadorTarde == contadorNoite) {
+        return 'tarde e noite';
+    }
+    else if (contadorManha == contadorNoite) {
+        return 'manhã e noite';
+    }
+};
+document.write("Entradas:<br/>Manha:".concat(contadorManha, "<br/>Tarde:").concat(contadorTarde, "<br/>Noite:").concat(contadorNoite, "<br/> O(s) hor\u00E1rio em que teve mais entradas foi ").concat(horarioMaisAcessado()));

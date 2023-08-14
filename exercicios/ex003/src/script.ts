@@ -31,4 +31,30 @@ const acessos = () => {
 
 acessos();
 
-document.write(`Entradas:<br/>Manha:${contadorManha}<br/>Tarde:${contadorTarde}<br/>Noite:${contadorNoite}`)
+const horarioMaisAcessado = () => {
+    if (contadorManha > contadorTarde && contadorManha > contadorNoite) {
+        return 'manhã.';
+    }
+    else if (contadorTarde > contadorManha && contadorTarde > contadorNoite) {
+        return 'a tarde.'
+    }
+    else if (contadorNoite > contadorManha && contadorNoite > contadorTarde) {
+        return 'a noite.'
+    }
+
+    if (contadorManha == contadorTarde) {
+        if (contadorTarde == contadorNoite) {
+            return 'todos'
+        } else {
+            return 'manhã e tarde'
+        }
+    }
+    else if (contadorTarde == contadorNoite) {
+        return 'tarde e noite'
+    }
+    else if (contadorManha == contadorNoite) {
+        return 'manhã e noite'
+    } 
+}
+
+document.write(`Entradas:<br/>Manha:${contadorManha}<br/>Tarde:${contadorTarde}<br/>Noite:${contadorNoite}<br/> O(s) horário em que teve mais entradas foi ${horarioMaisAcessado()}`)
