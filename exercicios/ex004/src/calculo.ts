@@ -29,9 +29,7 @@ const calcularBaskara = () => {
     }
 
     let delta = calcularDelta();
-    if (delta < 0) {
-        return 'não há raízes';
-    }
+    
 
     let x1 = ((b * -1) + Math.sqrt(delta)) / (2 * a);
     let x2 = ((b * -1) - Math.sqrt(delta)) / (2 * a);
@@ -41,7 +39,10 @@ const calcularBaskara = () => {
         x2 = (b * -1) / a;
     }
 
-    if (delta == 0) {
+    if (delta < 0) {
+        return 'não há raízes';
+    }
+    else if (delta == 0) {
         return `Os resultados foram ${x1.toFixed(1)} e ${x2.toFixed(1)}. Os dois resultados são iguais pois o delta é igual a 0.`;
     }
     else if(delta > 0) {
