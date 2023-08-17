@@ -23,6 +23,7 @@ const mostrarLoc = (lista) => {
                 <br>
                 <div>
                 zipcode: ${item.cep}
+                logradouro: ${item.logradouro}
                 </div>
                 <h4>bairro: ${item.bairro}</h4>
                 <h5>localidade: ${item.localidade}</h5>
