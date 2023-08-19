@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New apis</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="container">
+        <div class="bg">
+            <img src="./assets/bg.svg">
+        </div>
+        <div class="form">
+            <h2>Dados Cadastrais</h2>
+            <form id="formLoc">
+                <label for="cep">Cep:</label>
+                <input type="text" id="cep" placeholder="00000000" onkeyup="buscaCEP()">
+                <label for="logradouro">Av/Rua</label>
+                <input type="text" id="logradouro" placeholder="Av..." disabled>
+                <label for="bairro">Bairro</label>
+                <input type="text" id="bairro" placeholder="Bairro" disabled>
+                <label for="localidade">Cidade</label>
+                <input type="text" id="localidade" placeholder="Cidade" disabled>
+                <label for="estado">Estado</label>
+                <select id="estado">
+                    <option selected disabled>Escolha seu estado</option>
+                </select>
+            </form>
+        </div>
+    </div>
+
+    <script src="aula05.js"></script>
+</body>
+</html>

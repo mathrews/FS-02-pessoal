@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex</title>
+</head>
+<body>
+    
+    <h3>Escolha um pokemon</h3>
+    <select onchange="pokemonInfo()" id="pokedex">
+        <option>---</option>
+    </select>
+
+    <h4>Imagem:</h4>
+    <img src="" id="foto">
+    <h4>Tipos:</h4>
+    <p id="tipos"></p>
+
+    <script>
+        async function listarPokemons() {
+            try {
+
+                pokedex.innerHTML = '<option>Aguarde...</option>'
+                
+                let request = await fetch('https://pokeapi.co/api/v2/pokemon/')
+                let response = await request.json()
+
+                if (!response.results) {
+                    throw new Error("Erro de listage")
+                    return;
+                }
+
+                pokedex.innerHTML = ``;
+
+                response.results.forEach((e) => {
+                    pokedex.innerHTML += `
+                        <option value="${e.url}">${e.name}</option>
+                    `;
+                });
+
+            } catch (error) {
+                alert(error)
+            }
+        } listarPokemons()
+
+        async function pokemonInfo() {
+            try {
+                
+                let request = await fetch(pokedex.value)
+                let response = await request.json()
+
+                foto.setAttribute('src', response.sprites.front_default)
+                tipos.innerHTML = ''
+                response.types.forEach((e, position) => {
+                    if (position != 0) {
+                        tipos.innerHTML += `, ${e.type.name}`
+                    } else {
+                        tipos.innerHTML += `${e.type.name}`
+                    }
+                })
+
+
+            } catch (error) {
+                alert(error)
+            }
+        }
+
+    </script>
+</body>
+</html>
