@@ -1,3 +1,29 @@
+// interface categoria {
+//     type: string
+// }
+// interface produtos extends category {
+//     title: string;
+//     category: string;
+//     image: string;
+//     description: string
+//     price: number;
+// }
+
+type rating = {
+    rate: number,
+    count: number,
+}
+
+type produtosObject ={
+    id: number,
+    title: string,
+    category: string,
+    image: string,
+    description: string,
+    price: number,
+    rating: rating,
+}
+
 let lista = [];
 
 const buscarProdutos = () => {
