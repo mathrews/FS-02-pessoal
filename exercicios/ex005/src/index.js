@@ -20,16 +20,24 @@ const mostrarLoc = (lista) => {
     res.innerHTML = '';
     lista.map(item => {
         res.innerHTML = `
-                <br>
-                <div>
-                zipcode: ${item.cep}
-                logradouro: ${item.logradouro}
-                </div>
-                <h4>bairro: ${item.bairro}</h4>
-                <h5>localidade: ${item.localidade}</h5>
-                <p>DDD: ${item.ddd}</p>
-                <h6>UF: ${item.uf}</h6>
-        `;
+        <label for="zipcode">Zipcode:</label>
+        <input id="zipcode" type="text" value="${item.cep}">
+
+        <label for="logradouro">Logradouro:</label>
+        <input id="logradouro" type="text" value="${item.logradouro}">
+
+        <label for="bairro">bairro:</label>
+        <input id="bairro" type="text" value="${item.bairro}">
+
+        <label for="localidade">localidade:</label>
+        <input id="localidade" type="text" value="${item.localidade}">
+
+        <label for="ddd">DDD:</label>
+        <input id="ddd" type="text" value="${item.ddd}">
+
+        <label for="uf">UF:</label>
+        <input id="uf" type="text" value="${item.uf}">
+        `
     });
 }
 
