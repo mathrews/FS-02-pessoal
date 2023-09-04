@@ -1,0 +1,16 @@
+header {
+    background-color: blueviolet;
+
+    & ul {
+        display: flex;
+        list-style: none;
+        gap: 36px;
+    }
+
+    & a {
+        display: block;
+        padding: 0 26px;
+        line-height: 46px;
+        color: white;
+    }
+}

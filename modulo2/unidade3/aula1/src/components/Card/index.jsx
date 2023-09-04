@@ -17,13 +17,13 @@ const Card = ({titulo, imagem, desc, categoria, lerMais = false}) => {
                     }
                 />
                 {lerMais &&
-                <Botao 
-                    titulo='Ler Depois'
-                    cor={'#00DDFF'}
-                    onclick={
-                        () => alert('Ler Depois')
-                    }
-                />
+                    <Botao 
+                        titulo='Ler Depois'
+                        cor={'#00DDFF'}
+                        onclick={
+                            () => alert('Ler Depois')
+                        }
+                    />
                 }
             </div>
         </>
