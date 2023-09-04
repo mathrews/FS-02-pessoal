@@ -1,6 +1,7 @@
 import './index.css'
 
-const Header = () => {
+const Header = (props) => {
+
   return (
     <>
       <header>
@@ -13,7 +14,7 @@ const Header = () => {
               <a href="/sobre">Sobre</a>
             </li>
             <li>
-              <button>Logar</button>
+              <button onClick={props.logar}>Logar</button>
             </li>
           </ul>
         </nav>

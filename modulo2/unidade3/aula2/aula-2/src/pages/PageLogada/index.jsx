@@ -1,8 +1,8 @@
-const PageLogada = () => {
+const PageLogada = (props) => {
     return (
         <>
             <h1>Você está logado</h1>
-            <button>logout</button>
+            <button onClick={props.functionLogout}>logout</button>
         </>
     )
 }
