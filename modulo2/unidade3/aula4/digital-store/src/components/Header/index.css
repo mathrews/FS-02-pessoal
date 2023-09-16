@@ -1,0 +1,22 @@
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 104px;
+
+    
+    & nav {
+        
+        width: 100%;
+        
+        & ul {
+            display: flex;
+            gap: 2em;
+        }
+
+        & a:hover {
+            color: var(--pink);
+        }
+    }
+}
