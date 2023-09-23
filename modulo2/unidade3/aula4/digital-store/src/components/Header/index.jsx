@@ -1,38 +1,72 @@
-import {Link} from 'react-router-dom';
-import './index.css';
+import { Link, NavLink } from "react-router-dom";
+import "./index.css";
+import cart from "./assets/Buy.svg";
 
 const Header = () => {
-    return (
-        <>
-            <header>
-                <div className="logo">LOGO</div>
-                <div className="buscar">
-                    <input type="text" placeholder="Pesquisar produto..."/>
-                </div>
-                <div className="acoes">
-                    <Link to="/cadastro">Cadastre-se</Link>
-                    <Link to="/login">Entrar</Link>
-                    <h6>Carrin</h6>
-                </div>
-                <nav>
-                    <ul>
-                        <li>
-                            <Link to="/">Início</Link>
-                        </li>
-                        <li>
-                            <Link to="/produtos">Produtos</Link>
-                        </li>
-                        <li>
-                            <Link to="/categorias">Categorias</Link>
-                        </li>
-                        <li>
-                            <Link to="/meus-pedidos">Meus Pedidos</Link>
-                        </li>
-                    </ul>
-                </nav>
-            </header>
-        </>
-    )
-}
+//   const location = useLocation(); // mostra a rota atual
 
-export default Header
+  return (
+    <>
+      <header>
+        <div className="menu">M</div>
+        <div className="logo">
+          <div className="logo-icon"></div>
+          Digital Store
+        </div>
+        {/* <div className="buscar">
+          <input
+            type="text"
+            placeholder="Pesquisar produto..."
+          />
+          <button></button>
+        </div> */}
+        <div className="acoes">
+          <Link
+            className="underlined"
+            to="/cadastro">
+            Cadastre-se
+          </Link>
+          <Link
+            className="btn"
+            to="/login">
+            Entrar
+          </Link>
+          <div className="carrinho">
+            <img src={cart} />
+            <span>0</span>
+          </div>
+        </div>
+        {/* <nav>
+          <ul>
+            <li>
+              <NavLink //verificação implicita insere o active
+                to="/">
+                Início
+              </NavLink>
+            </li>
+            <li>
+              <NavLink //verificação implicita insere o active
+                to="/produtos">
+                Produtos
+              </NavLink>
+            </li>
+            <li>
+              <NavLink //verificação implicita insere o active
+                to="/categorias">
+                Categorias
+              </NavLink>
+            </li>
+            <li>
+              <NavLink //verificação implicita insere o active
+                to="/meus-pedidos">
+                Meus Pedidos
+              </NavLink>
+            </li>
+          </ul>
+        </nav> */}
+      </header>
+    </>
+  );
+};
+
+export default Header;
