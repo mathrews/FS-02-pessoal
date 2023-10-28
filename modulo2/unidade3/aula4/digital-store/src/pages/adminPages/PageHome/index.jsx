@@ -4,7 +4,7 @@ const PageHome = () => {
   return (
     <>
         <h1>Admin</h1>
-        <Button>Text</Button>
+        <Button>Tex</Button>
     </>
   )
 }
