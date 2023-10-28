@@ -146,6 +146,23 @@ header {
             border-radius: 5px;
         }
 
+        & h3 {
+            font-size: 16px;
+            text-align: right;
+
+            & span {
+                display: block;
+                font-size: 14px;
+                color: #777777;
+                cursor: pointer;
+                transition-duration: 200ms;
+
+                &:hover {
+                    color: var(--pink);
+                }
+            }
+        }
+
         & .carrinho {
             position: relative;
 
@@ -213,18 +230,18 @@ header {
 
 @media only screen and (max-width: 480px) {
     header {
-        gap: 0;
         padding: 20px;
     }
 
     header .menu {
-        display: block;
+        display: flex;
     }
 
     header .logo {
-        font-size: 20px;
+        font-size: 26px;
         flex: 1;
-        justify-content: center';
+        justify-content: center;
+        padding-left: 2em;
     }
 
     header .logo-icon {
@@ -232,7 +249,15 @@ header {
         height: 18px;
     }
 
+    header .buscar {
+        display: none;
+    }
+
     header .acoes a {
         display: none;
-       }
+    }
+
+    header nav {
+        display: none;
+    }
 }

@@ -43,7 +43,21 @@ footer {
 
             & nav ul {
                 display: flex;
-                gap: 2em;
+                gap: 1em;
+                
+                & li {
+                    width: 2.6em;
+                    height: 2.6em;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    border-radius: 50%;
+                    transition-duration: 200ms;
+                    
+                    &:hover {
+                        background-color: #FFFFFF40;
+                    }
+                }
             }
         }
 
