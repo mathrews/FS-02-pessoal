@@ -12,9 +12,10 @@ import AdminLayout from "../layouts/AdminLayout";
 import PageHome from "../pages/adminPages/PageHome";
 import PageUsers from "../pages/adminPages/PageUsers";
 import ProtectRoute from "./ProtectRoute";
+import PageProducts from "../pages/adminPages/PageProducts";
+import PageCategories from "../pages/adminPages/PageCategories";
 
 const Ways = () => {
-
     return (
         <>
             <BrowserRouter>
@@ -53,6 +54,7 @@ const Ways = () => {
                         />
                     </Route>
 
+                    {/* dashboard rota protegida */}
                     <Route
                         path="/dashboard"
                         element={
@@ -67,6 +69,14 @@ const Ways = () => {
                         <Route
                             path="/dashboard/usuarios"
                             element={<PageUsers />}
+                        />
+                        <Route
+                            path="/dashboard/produtos"
+                            element={<PageProducts />}
+                        />
+                        <Route
+                            path="/dashboard/categorias"
+                            element={<PageCategories />}
                         />
                     </Route>
 

@@ -2,10 +2,27 @@
     "users": [
         {
             "id": 1,
-            "name": "Davi",
+            "nome": "Davi",
             "email": "davi@email.com",
             "password": "123456",
+            "keep_Logged": false,
+            "level": "admin"
+        },
+        {
+            "id": 2,
+            "nome": "Gleidson",
+            "email": "gleidson@gmail.com",
+            "password": "123456",
+            "level": "user",
             "keep_Logged": false
+        },
+        {
+            "id": 3,
+            "nome": "Teteus",
+            "email": "teteus@gmail.com",
+            "password": "465768",
+            "level": "admin",
+            "keep_Logged": true
         }
     ],
     "banners": [
@@ -13,8 +30,7 @@
             "id": 1,
             "suptitle": "Melhores ofertas personalizadas",
             "title": "Queima de estoque Nike",
-            "description":
-                "Consequat culpa exercitation mollit nisi excepteur do do tempor laboris eiusmod irure consectetur.",
+            "description": "Consequat culpa exercitation mollit nisi excepteur do do tempor laboris eiusmod irure consectetur.",
             "buttonText": "Ver Ofertas",
             "image": "tenis1"
         },
@@ -22,8 +38,7 @@
             "id": 2,
             "suptitle": "Melhores ofertas personalizadas",
             "title": "Leve o seu agora",
-            "description":
-                "Consequat culpa exercitation mollit nisi excepteur do do tempor laboris eiusmod irure consectetur.",
+            "description": "Consequat culpa exercitation mollit nisi excepteur do do tempor laboris eiusmod irure consectetur.",
             "buttonText": "Ver Ofertas",
             "image": "tenis2"
         },
@@ -31,8 +46,7 @@
             "id": 3,
             "suptitle": "Melhores ofertas personalizadas",
             "title": "O mais melhor de todos",
-            "description":
-                "Consequat culpa exercitation mollit nisi excepteur do do tempor laboris eiusmod irure consectetur.",
+            "description": "Consequat culpa exercitation mollit nisi excepteur do do tempor laboris eiusmod irure consectetur.",
             "buttonText": "Ver Ofertas",
             "image": "tenis3"
         },
@@ -40,8 +54,7 @@
             "id": 4,
             "suptitle": "Melhores ofertas personalizadas",
             "title": "Queima de estoque Nike",
-            "description":
-                "Consequat culpa exercitation mollit nisi excepteur do do tempor laboris eiusmod irure consectetur.",
+            "description": "Consequat culpa exercitation mollit nisi excepteur do do tempor laboris eiusmod irure consectetur.",
             "buttonText": "Ver Ofertas",
             "image": "tenis1"
         },
@@ -49,8 +62,7 @@
             "id": 5,
             "suptitle": "Melhores ofertas personalizadas",
             "title": "Leve o seu agora",
-            "description":
-                "Consequat culpa exercitation mollit nisi excepteur do do tempor laboris eiusmod irure consectetur.",
+            "description": "Consequat culpa exercitation mollit nisi excepteur do do tempor laboris eiusmod irure consectetur.",
             "buttonText": "Ver Ofertas",
             "image": "tenis2"
         },
@@ -58,8 +70,7 @@
             "id": 6,
             "suptitle": "Melhores ofertas personalizadas",
             "title": "O mais melhor de todos",
-            "description":
-                "Consequat culpa exercitation mollit nisi excepteur do do tempor laboris eiusmod irure consectetur.",
+            "description": "Consequat culpa exercitation mollit nisi excepteur do do tempor laboris eiusmod irure consectetur.",
             "buttonText": "Ver Ofertas",
             "image": "tenis3"
         },
@@ -67,8 +78,7 @@
             "id": 7,
             "suptitle": "Melhores ofertas personalizadas",
             "title": "Queima de estoque Nike",
-            "description":
-                "Consequat culpa exercitation mollit nisi excepteur do do tempor laboris eiusmod irure consectetur.",
+            "description": "Consequat culpa exercitation mollit nisi excepteur do do tempor laboris eiusmod irure consectetur.",
             "buttonText": "Ver Ofertas",
             "image": "tenis1"
         },
@@ -76,8 +86,7 @@
             "id": 8,
             "suptitle": "Melhores ofertas personalizadas",
             "title": "Leve o seu agora",
-            "description":
-                "Consequat culpa exercitation mollit nisi excepteur do do tempor laboris eiusmod irure consectetur.",
+            "description": "Consequat culpa exercitation mollit nisi excepteur do do tempor laboris eiusmod irure consectetur.",
             "buttonText": "Ver Ofertas",
             "image": "tenis2"
         },
@@ -85,8 +94,7 @@
             "id": 9,
             "suptitle": "Melhores ofertas personalizadas",
             "title": "O mais melhor de todos",
-            "description":
-                "Consequat culpa exercitation mollit nisi excepteur do do tempor laboris eiusmod irure consectetur.",
+            "description": "Consequat culpa exercitation mollit nisi excepteur do do tempor laboris eiusmod irure consectetur.",
             "buttonText": "Ver Ofertas",
             "image": "tenis3"
         }
@@ -102,8 +110,101 @@
             "price": "219.90",
             "sizes": "[39, 40, 41, 42, 43]",
             "colors": "['#6FEEFF', '#FF6969', '#5E5E5E', '#6D70B7']",
-            "reviews": 90
+            "reviews": 90,
+            "categorie": "shooes"
+        },
+        {
+            "id": 2,
+            "name": "Tênis Nike AirForce 6",
+            "description": "Consequat culpa exercitation mollit nisi excepteur do do tempor laboris eiusmod irure consectetur.",
+            "ref": "38416711",
+            "brand": "nike",
+            "rate": 5.0,
+            "price": "199.90",
+            "sizes": "[39, 40, 41, 42, 43]",
+            "colors": "['#6FEEFF', '#FF6969', '#5E5E5E', '#6D70B7']",
+            "reviews": 50,
+            "categorie": "shooes"
+        },
+        {
+            "id": 3,
+            "name": "Tênis Nike AirJordan Red",
+            "description": "Consequat culpa exercitation mollit nisi excepteur do do tempor laboris eiusmod irure consectetur.",
+            "ref": "38416711",
+            "brand": "nike",
+            "rate": 3.6,
+            "price": "299.90",
+            "sizes": "[39, 40, 41, 42, 43]",
+            "colors": "['#6FEEFF', '#FF6969', '#5E5E5E', '#6D70B7']",
+            "reviews": 50,
+            "categorie": "shooes"
+        },
+        {
+            "id": 4,
+            "name": "Tênis Adidas Classic",
+            "description": "Consequat culpa exercitation mollit nisi excepteur do do tempor laboris eiusmod irure consectetur.",
+            "ref": "38416711",
+            "brand": "adidas",
+            "rate": 3.9,
+            "price": "199.90",
+            "sizes": "[39, 40, 41, 42, 43]",
+            "colors": "['#6FEEFF', '#FF6969', '#5E5E5E', '#6D70B7']",
+            "reviews": 50,
+            "categorie": "shooes"
+        },
+        {
+            "id": 5,
+            "name": "Tênis Vans OldSchool",
+            "description": "Consequat culpa exercitation mollit nisi excepteur do do tempor laboris eiusmod irure consectetur.",
+            "ref": "38416711",
+            "brand": "Vans",
+            "rate": 4.9,
+            "price": "249.90",
+            "sizes": "[39, 40, 41, 42, 43]",
+            "colors": "['#6FEEFF', '#FF6969', '#5E5E5E', '#6D70B7']",
+            "reviews": 80,
+            "categorie": "shooes"
+        },
+        {
+            "id": 6,
+            "name": "Tênis Vans Sport",
+            "description": "Consequat culpa exercitation mollit nisi excepteur do do tempor laboris eiusmod irure consectetur.",
+            "ref": "38416711",
+            "brand": "Vans",
+            "rate": 5.0,
+            "price": "199.90",
+            "sizes": "[39, 40, 41, 42, 43]",
+            "colors": "['#6FEEFF', '#FF6969', '#5E5E5E', '#6D70B7']",
+            "reviews": 50,
+            "categorie": "shooes"
+        },
+        {
+            "id": 7,
+            "name": "Tênis Redley Long",
+            "description": "Consequat culpa exercitation mollit nisi excepteur do do tempor laboris eiusmod irure consectetur.",
+            "ref": "38416711",
+            "brand": "Redley",
+            "rate": 5.0,
+            "price": "199.90",
+            "sizes": "[39, 40, 41, 42, 43]",
+            "colors": "['#6FEEFF', '#FF6969', '#5E5E5E', '#6D70B7']",
+            "reviews": 1000,
+            "categorie": "shooes"
         }
     ],
-    "colections": []
+    "colections": [],
+    "categories": [
+        {
+            "shooes": "Skate shoes",
+            "shirts": "Skate t-shirts",
+            "jackets": "Street jackets",
+            "pants": "Cargo pants"
+        },
+        {
+            "shooes": "Basket shoes",
+            "shirts": "NBA t-shirts",
+            "jackets": "NBA jackets",
+            "pants": "NBA pants"
+        }
+    ]
 }

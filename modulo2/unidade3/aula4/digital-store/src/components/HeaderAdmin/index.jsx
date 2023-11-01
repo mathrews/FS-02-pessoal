@@ -27,6 +27,20 @@ const HeaderAdmin = () => {
                                 <i className={"pi pi-users"}></i> Usuários
                             </Link>
                         </li>
+                        <li className={"p-3"}>
+                            <Link
+                                to={"/dashboard/produtos"}
+                                className={"flex align-items-center gap-2 text-color hover:text-primary"}>
+                                <i className={"pi pi-shopping-cart"}></i> Produtos
+                            </Link>
+                        </li>
+                        <li className={"p-3"}>
+                            <Link
+                                to={"/dashboard/categorias"}
+                                className={"flex align-items-center gap-2 text-color hover:text-primary"}>
+                                <i className={"pi pi-sitemap"}></i> Categorias
+                            </Link>
+                        </li>
                     </ul>
                 </nav>
             </div>

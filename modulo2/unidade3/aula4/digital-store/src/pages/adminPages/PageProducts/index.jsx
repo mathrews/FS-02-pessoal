@@ -1,37 +1,37 @@
 import { Button } from "primereact/button";
+import { Column } from "primereact/column";
+import { DataTable } from "primereact/datatable";
 import { Sidebar } from "primereact/sidebar";
 import { useEffect, useState } from "react";
-import { DataTable } from "primereact/datatable";
-import { Column } from "primereact/column";
 import { API } from "../../../service";
 
-const PageUsers = () => {
+const PageProducts = () => {
     const [visibleCreate, setVisibleCreate] = useState(false);
 
-    const [users, setUsers] = useState();
+    const [products, setProducts] = useState()
 
-    const fetchUsers = async () => {
-        try {
-            const response = await API.get("users");
-            setUsers(response.data);
-        } catch (error) {
-            alert('Erro:', error.message)
-        }
-    };
+    const fetchProducts = async () => {
+      try {
+        const response = await API.get('products')
+        setProducts(response.data)
+      } catch (error) {
+        alert('Erro:', error.message)
+      }
+    }
 
     useEffect(() => {
-        fetchUsers();
-    }, []);
+      fetchProducts()
+    }, [])
 
     return (
         <>
             <div className={"w-full flex justify-content-between mb-4"}>
-                <h1>Usuarios</h1>
-                <Button onClick={() => setVisibleCreate(true)}>Novo Usuário</Button>
+                <h1>Produtos</h1>
+                <Button onClick={() => setVisibleCreate(true)}>Novo Produto</Button>
             </div>
 
             <DataTable
-                value={users}
+                value={products}
                 paginator
                 rows={5}
                 showGridlines
@@ -41,14 +41,20 @@ const PageUsers = () => {
                     field="id"
                     header="Id"></Column>
                 <Column
-                    field="nome"
+                    field="name"
                     header="Nome"></Column>
                 <Column
-                    field="email"
-                    header="Email"></Column>
+                    field="categorie"
+                    header="Categoria"></Column>
                 <Column
-                    field="level"
-                    header="Nivel"></Column>
+                    field="price"
+                    header="Preço"></Column>
+                <Column
+                    field="rate"
+                    header="Rate"></Column>
+                <Column
+                    field="reviews"
+                    header="Reviews"></Column>
                 <Column
                     header={"Ações"}
                     bodyClassName={"w-1"}
@@ -77,4 +83,4 @@ const PageUsers = () => {
     );
 };
 
-export default PageUsers;
+export default PageProducts;
