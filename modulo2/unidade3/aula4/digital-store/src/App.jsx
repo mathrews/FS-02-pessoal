@@ -5,9 +5,12 @@ import "../public/digital.css";
 import { PrimeReactProvider } from "primereact/api";
 import 'primeicons/primeicons.css';
 import 'primeflex/primeflex.css';
+import { QueryClientProvider } from "react-query";
+import { queryClient } from "./service";
 
 
 const App = () => {
+
     const [userInfo, setUserInfo] = useState({
         name: "David",
         isLogged: false,
@@ -16,11 +19,13 @@ const App = () => {
 
     return (
         <>
-            <AuthContext.Provider value={{ userInfo, setUserInfo }}>
-                <PrimeReactProvider>
-                    <Ways />
-                </PrimeReactProvider>
-            </AuthContext.Provider>
+            <QueryClientProvider client={queryClient}>
+                <AuthContext.Provider value={{ userInfo, setUserInfo }}>
+                    <PrimeReactProvider>
+                        <Ways />
+                    </PrimeReactProvider>
+                </AuthContext.Provider>
+            </QueryClientProvider>
         </>
     );
 };

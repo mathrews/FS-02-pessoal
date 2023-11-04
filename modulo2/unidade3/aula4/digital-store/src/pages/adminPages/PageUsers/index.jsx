@@ -1,27 +1,72 @@
 import { Button } from "primereact/button";
 import { Sidebar } from "primereact/sidebar";
-import { useEffect, useState } from "react";
+import { useRef, useState } from "react";
 import { DataTable } from "primereact/datatable";
 import { Column } from "primereact/column";
-import { API } from "../../../service";
+import { useUserCreate, useUserDelete, useUsers } from "../../../hooks/useUsers";
+import { InputText } from "primereact/inputtext";
+import { Dropdown } from "primereact/dropdown";
+import { useForm } from "react-hook-form";
+import { ConfirmDialog, confirmDialog } from "primereact/confirmdialog";
+import { Toast } from "primereact/toast";
 
 const PageUsers = () => {
     const [visibleCreate, setVisibleCreate] = useState(false);
 
-    const [users, setUsers] = useState();
+    const {
+        register: createData,
+        handleSubmit: createSubmit,
+        setValue: createValue,
+        reset: createReset,
+    } = useForm({
+        defaultValues: {
+            level: 1,
+        },
+    });
 
-    const fetchUsers = async () => {
+    const [levelSelected, setLevelSelected] = useState("1");
+
+    const { data: usuarios } = useUsers();
+    const userCreate = useUserCreate();
+    const userDelete = useUserDelete();
+
+    // const { register: editData, handleSubmit: editSubmit, reset: editReset } = useForm();
+
+    const createUser = (data) => {
         try {
-            const response = await API.get("users");
-            setUsers(response.data);
+            userCreate.mutateAsync(data);
+            createReset();
+            setVisibleCreate(false);
         } catch (error) {
-            alert('Erro:', error.message)
+            console.log(error.message);
         }
     };
 
-    useEffect(() => {
-        fetchUsers();
-    }, []);
+    const deleteUser = (id) => {
+        try {
+            userDelete.mutateAsync(id);
+        } catch (error) {
+            console.log(error.message);
+        }
+    };
+
+    const toast = useRef(null);
+    const sim = () => {
+        toast.current.show({
+            severity: "info",
+            detail: "Item deletado com sucesso!",
+        });
+    };
+
+    const confirm = () => {
+        confirmDialog({
+            header: "Atenção",
+            message: "Deseja realmente apagar este item?",
+            accept: sim(),
+            acceptLabel: "Sim",
+            rejectLabel: "Não",
+        });
+    };
 
     return (
         <>
@@ -31,28 +76,33 @@ const PageUsers = () => {
             </div>
 
             <DataTable
-                value={users}
+                value={usuarios}
                 paginator
                 rows={5}
                 showGridlines
                 rowsPerPageOptions={[5, 10, 25, 50]}
-                tableStyle={{ minWidth: "50rem" }}>
+                tableStyle={{ minWidth: "40rem" }}>
                 <Column
                     field="id"
                     header="Id"></Column>
                 <Column
-                    field="nome"
+                    field="name"
                     header="Nome"></Column>
                 <Column
                     field="email"
                     header="Email"></Column>
                 <Column
                     field="level"
-                    header="Nivel"></Column>
+                    header="Nivel"
+                    body={(rowData) => (
+                        <div className="bg-primary border-round text-light inline-block p-2">
+                            {rowData.level === 1 ? "Usuario" : "Admin"}
+                        </div>
+                    )}></Column>
                 <Column
                     header={"Ações"}
                     bodyClassName={"w-1"}
-                    body={() => (
+                    body={(rowData) => (
                         <div className="flex gap-3">
                             <Button
                                 rounded
@@ -61,6 +111,10 @@ const PageUsers = () => {
                             <Button
                                 rounded
                                 icon={"pi pi-trash"}
+                                onClick={() => {
+                                    confirm();
+                                    deleteUser(rowData.id);
+                                }}
                             />
                         </div>
                     )}
@@ -71,8 +125,68 @@ const PageUsers = () => {
                 visible={visibleCreate}
                 onHide={() => setVisibleCreate(false)}
                 position={"right"}>
-                Something
+                <h1 className="mb-3">Novo usuário:</h1>
+                <form onSubmit={createSubmit(createUser)}>
+                    <label
+                        className="block mb-1"
+                        htmlFor="name">
+                        Nome
+                    </label>
+                    <InputText
+                        className="w-full mb-3"
+                        type="text"
+                        id="name"
+                        placeholder="Digite seu nome"
+                        {...createData("name", { required: true })}
+                    />
+                    <label
+                        className="block mb-1"
+                        htmlFor="email">
+                        Email
+                    </label>
+                    <InputText
+                        className="w-full mb-3"
+                        type="text"
+                        id="email"
+                        placeholder="Digite seu email"
+                        {...createData("email", { required: true })}
+                    />
+                    <label
+                        className="block mb-1"
+                        htmlFor="level">
+                        Level
+                    </label>
+                    <Dropdown
+                        value={levelSelected}
+                        onChange={(e) => {
+                            setLevelSelected(e.value);
+                            createValue("level", e.value);
+                        }}
+                        className={"w-full"}
+                        options={[
+                            {
+                                level: "User",
+                                value: 1,
+                            },
+                            {
+                                level: "Admin",
+                                value: 2,
+                            },
+                        ]}
+                        optionLabel="level"
+                        optionValue="value"
+                        placeholder="Select a Level"
+                    />
+                    <Button
+                        label="Salvar"
+                        type="submit"
+                        className="w-full mt-3"
+                    />
+                </form>
             </Sidebar>
+
+            <Toast ref={toast} />
+            <ConfirmDialog />
         </>
     );
 };

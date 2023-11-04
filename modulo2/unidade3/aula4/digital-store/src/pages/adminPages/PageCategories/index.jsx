@@ -1,27 +1,29 @@
 import { Button } from "primereact/button";
-import { useEffect, useState } from "react";
-import { API } from "../../../service";
+import { useState } from "react";
 import { Sidebar } from "primereact/sidebar";
 import { Column } from "primereact/column";
 import { DataTable } from "primereact/datatable";
+import { useCategories } from "../../../hooks/useCategories";
 
 const PageCategories = () => {
     const [visibleCreate, setVisibleCreate] = useState(false);
 
-    const [categories, setCategories] = useState();
+    // const [categories, setCategories] = useState();
 
-    const fetchCategories = async () => {
-      try {
-        const response = await API.get("categories");
-        setCategories(response.data);
-      } catch (error) {
-        alert('Erro:', error.message)
-      }
-    };
+    // const fetchCategories = async () => {
+    //   try {
+    //     const response = await API.get("categories");
+    //     setCategories(response.data);
+    //   } catch (error) {
+    //     alert('Erro:', error.message)
+    //   }
+    // };
 
-    useEffect(() => {
-      fetchCategories();
-    }, []);
+    // useEffect(() => {
+    //   fetchCategories();
+    // }, []);
+
+    const { data: categories } = useCategories();
 
     return (
         <>
@@ -36,7 +38,7 @@ const PageCategories = () => {
                 rows={5}
                 showGridlines
                 rowsPerPageOptions={[5, 10, 25, 50]}
-                tableStyle={{ minWidth: "50rem" }}>
+                tableStyle={{ minWidth: "40rem" }}>
                 <Column
                     field="shooes"
                     header="Calçados"></Column>

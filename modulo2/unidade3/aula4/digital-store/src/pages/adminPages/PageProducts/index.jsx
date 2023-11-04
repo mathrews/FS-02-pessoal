@@ -2,26 +2,28 @@ import { Button } from "primereact/button";
 import { Column } from "primereact/column";
 import { DataTable } from "primereact/datatable";
 import { Sidebar } from "primereact/sidebar";
-import { useEffect, useState } from "react";
-import { API } from "../../../service";
+import { useState } from "react";
+import { useProducts } from "../../../hooks/useProducts";
 
 const PageProducts = () => {
     const [visibleCreate, setVisibleCreate] = useState(false);
 
-    const [products, setProducts] = useState()
+    // const [products, setProducts] = useState()
 
-    const fetchProducts = async () => {
-      try {
-        const response = await API.get('products')
-        setProducts(response.data)
-      } catch (error) {
-        alert('Erro:', error.message)
-      }
-    }
+    // const fetchProducts = async () => {
+    //   try {
+    //     const response = await API.get('products')
+    //     setProducts(response.data)
+    //   } catch (error) {
+    //     alert('Erro:', error.message)
+    //   }
+    // }
 
-    useEffect(() => {
-      fetchProducts()
-    }, [])
+    // useEffect(() => {
+    //   fetchProducts()
+    // }, [])
+
+    const { data: products } = useProducts();
 
     return (
         <>
@@ -36,7 +38,7 @@ const PageProducts = () => {
                 rows={5}
                 showGridlines
                 rowsPerPageOptions={[5, 10, 25, 50]}
-                tableStyle={{ minWidth: "50rem" }}>
+                tableStyle={{ minWidth: "40rem" }}>
                 <Column
                     field="id"
                     header="Id"></Column>
