@@ -51,10 +51,18 @@ const PageUsers = () => {
     };
 
     const toast = useRef(null);
-    const sim = () => {
+    const accept = () => {
         toast.current.show({
             severity: "info",
             detail: "Item deletado com sucesso!",
+            summary: 'Confirmed'
+        });
+    };
+    const reject = () => {
+        toast.current.show({
+            severity: "info",
+            detail: "Ação rejeitada.",
+            summary: 'Rejeitado'
         });
     };
 
@@ -62,7 +70,8 @@ const PageUsers = () => {
         confirmDialog({
             header: "Atenção",
             message: "Deseja realmente apagar este item?",
-            accept: sim(),
+            accept,
+            reject,
             acceptLabel: "Sim",
             rejectLabel: "Não",
         });
