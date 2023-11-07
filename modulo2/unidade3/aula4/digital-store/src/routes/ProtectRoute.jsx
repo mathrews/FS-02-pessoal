@@ -4,7 +4,6 @@ import { AuthContext } from "../context/AuthContext";
 
 // eslint-disable-next-line react/prop-types
 const ProtectRoute = ({ children }) => {
-    // eslint-disable-next-line react/prop-types
     const { userInfo } = useContext(AuthContext);
     return userInfo.level === 'admin' ? children : <Navigate to='/'/>;
 }

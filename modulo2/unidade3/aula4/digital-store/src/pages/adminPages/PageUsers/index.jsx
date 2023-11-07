@@ -51,7 +51,8 @@ const PageUsers = () => {
     };
 
     const toast = useRef(null);
-    const accept = () => {
+    const accept = (id) => {
+        deleteUser(id);
         toast.current.show({
             severity: "info",
             detail: "Item deletado com sucesso!",
@@ -66,11 +67,11 @@ const PageUsers = () => {
         });
     };
 
-    const confirm = () => {
+    const confirm = (id) => {
         confirmDialog({
             header: "Atenção",
             message: "Deseja realmente apagar este item?",
-            accept,
+            accept: () => accept(id),
             reject,
             acceptLabel: "Sim",
             rejectLabel: "Não",
@@ -120,9 +121,8 @@ const PageUsers = () => {
                             <Button
                                 rounded
                                 icon={"pi pi-trash"}
-                                onClick={() => {
-                                    confirm();
-                                    deleteUser(rowData.id);
+                                onClick={ async () => {
+                                    confirm(rowData.id);
                                 }}
                             />
                         </div>
