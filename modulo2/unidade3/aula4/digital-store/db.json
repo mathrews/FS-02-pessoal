@@ -1,5 +1,12 @@
 {
-  "users": [],
+  "users": [
+    {
+      "level": 1,
+      "name": "Mateus de Souza",
+      "email": "mateusps4gg@gmail.com",
+      "id": 1
+    }
+  ],
   "banners": [
     {
       "id": 1,

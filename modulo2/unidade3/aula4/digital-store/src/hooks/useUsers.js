@@ -29,3 +29,14 @@ export const useUserDelete = () => {
         }
     });
 }
+
+export const useUserUpdate = () => {
+    return useMutation(async (id, data) => {
+        return await API.put(`users/${id}`, data)
+    },
+    {
+        onSuccess: () => {
+            queryClient.invalidateQueries(['users']);
+        }
+    })
+}
