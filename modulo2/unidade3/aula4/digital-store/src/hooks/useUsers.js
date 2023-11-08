@@ -31,8 +31,9 @@ export const useUserDelete = () => {
 }
 
 export const useUserUpdate = () => {
-    return useMutation(async (id, data) => {
-        return await API.put(`users/${id}`, data)
+    return useMutation(async (data) => {
+        console.log(data);
+        return await API.put(`users/${data.id}`, data)
     },
     {
         onSuccess: () => {

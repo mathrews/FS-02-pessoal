@@ -52,9 +52,10 @@ const PageUsers = () => {
         }
     };
 
-    const updateUser = (id, data) => {
+    const updateUser = (data) => {
         try {
-            userUpdate.mutateAsync(id, data);
+            console.log(data);
+            userUpdate.mutateAsync(data);
             editReset();
             setVisibleEdit(false);
         } catch (error) {
@@ -218,6 +219,18 @@ const PageUsers = () => {
                 position={"right"}>
                 <h1 className="mb-3">Editar usuário:</h1>
                 <form onSubmit={editSubmit(updateUser)}>
+                    <label
+                        className="block mb-1"
+                        htmlFor="id">
+                        Id
+                    </label>
+                    <InputText
+                        className="w-full mb-3"
+                        type="text"
+                        id="id"
+                        placeholder="Digite o Id"
+                        {...editData("id", { required: true })}
+                    />
                     <label
                         className="block mb-1"
                         htmlFor="name">
