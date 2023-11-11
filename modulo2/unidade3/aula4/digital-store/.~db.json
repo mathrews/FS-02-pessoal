@@ -1,12 +1,5 @@
 {
-  "users": [
-    {
-      "level": 2,
-      "name": "teste",
-      "email": "teste@gmail.com",
-      "id": 1
-    }
-  ],
+  "users": [],
   "banners": [
     {
       "id": 1,

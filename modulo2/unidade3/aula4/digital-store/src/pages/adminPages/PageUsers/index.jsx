@@ -38,7 +38,7 @@ const PageUsers = () => {
         try {
             userCreate.mutateAsync(data);
             createReset();
-            setVisibleEdit(false);
+            setVisibleCreate(false);
         } catch (error) {
             console.log(error.message);
         }
