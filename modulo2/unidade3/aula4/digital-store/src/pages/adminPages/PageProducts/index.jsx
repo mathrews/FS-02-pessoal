@@ -3,27 +3,42 @@ import { Column } from "primereact/column";
 import { DataTable } from "primereact/datatable";
 import { Sidebar } from "primereact/sidebar";
 import { useState } from "react";
-import { useProducts } from "../../../hooks/useProducts";
+import { useProductCreate, useProductDelete, useProducts } from "../../../hooks/useProducts";
+import { useForm } from "react-hook-form";
+import { InputText } from "primereact/inputtext";
 
 const PageProducts = () => {
     const [visibleCreate, setVisibleCreate] = useState(false);
 
-    // const [products, setProducts] = useState()
-
-    // const fetchProducts = async () => {
-    //   try {
-    //     const response = await API.get('products')
-    //     setProducts(response.data)
-    //   } catch (error) {
-    //     alert('Erro:', error.message)
-    //   }
-    // }
-
-    // useEffect(() => {
-    //   fetchProducts()
-    // }, [])
+    const {
+        register: createData,
+        handleSubmit: createSubmit,
+        reset: createReset,
+    } = useForm();
 
     const { data: products } = useProducts();
+    const productCreate = useProductCreate();
+    const productDelete = useProductDelete();
+
+    const createProduct = (data) => {
+        try {
+            productCreate.mutateAsync(data);
+            createReset();
+            setVisibleCreate(false);
+        } catch (error) {
+            console.log(error.message);
+        }
+    };
+
+    const deleteProduct = (id) => {
+        try {
+            productDelete.mutateAsync(id);
+        } catch (error) {
+            console.log(error.message);
+        }
+    };
+
+    
 
     return (
         <>
@@ -52,15 +67,12 @@ const PageProducts = () => {
                     field="price"
                     header="Preço"></Column>
                 <Column
-                    field="rate"
-                    header="Rate"></Column>
-                <Column
-                    field="reviews"
-                    header="Reviews"></Column>
+                    field="ref"
+                    header="REF"></Column>
                 <Column
                     header={"Ações"}
                     bodyClassName={"w-1"}
-                    body={() => (
+                    body={(rowData) => (
                         <div className="flex gap-3">
                             <Button
                                 rounded
@@ -69,6 +81,7 @@ const PageProducts = () => {
                             <Button
                                 rounded
                                 icon={"pi pi-trash"}
+                                onClick={() => deleteProduct(rowData.id)}
                             />
                         </div>
                     )}
@@ -79,7 +92,68 @@ const PageProducts = () => {
                 visible={visibleCreate}
                 onHide={() => setVisibleCreate(false)}
                 position={"right"}>
-                Something
+                <h1 className="mb-3">Novo usuário:</h1>
+                <form onSubmit={createSubmit(createProduct)}>
+                    
+                    <label
+                        className="block mb-1"
+                        htmlFor="name">
+                        Nome
+                    </label>
+                    <InputText
+                        className="w-full mb-3"
+                        type="text"
+                        id="name"
+                        placeholder="Digite seu nome"
+                        {...createData("name", { required: true })}
+                    />
+
+                    <label
+                        className="block mb-1"
+                        htmlFor="email">
+                        Categoria
+                    </label>
+                    <InputText
+                        className="w-full mb-3"
+                        type="text"
+                        id="email"
+                        placeholder="Digite sua categoria"
+                        {...createData("category", { required: true })}
+                    />
+
+                    <label
+                        className="block mb-1"
+                        htmlFor="Preço">
+                        Preço
+                    </label>
+                    <InputText
+                        className="w-full mb-3"
+                        type="text"
+                        id="preço"
+                        placeholder="Digite o preço"
+                        {...createData("price", { required: true })}
+                    />
+
+                    <label
+                        className="block mb-1"
+                        htmlFor="ref">
+                        REF
+                    </label>
+                    <InputText
+                        className="w-full mb-3"
+                        type="text"
+                        id="ref"
+                        placeholder="Digite a ref do produto"
+                        {...createData("ref", { required: true })}
+                    />
+
+                    <Button
+                        label="Salvar"
+                        type="submit"
+                        className="w-full mt-3"
+                    />
+
+                </form>
             </Sidebar>
         </>
     );

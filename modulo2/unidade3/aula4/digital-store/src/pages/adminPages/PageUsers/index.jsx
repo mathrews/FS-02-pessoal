@@ -140,7 +140,7 @@ const PageUsers = () => {
                             <Button
                                 rounded
                                 icon={"pi pi-trash"}
-                                onClick={async () => {
+                                onClick={() => {
                                     confirm(rowData.id);
                                 }}
                             />
