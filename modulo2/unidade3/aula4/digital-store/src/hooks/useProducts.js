@@ -29,3 +29,15 @@ export const useProductDelete = () => {
         }
     });
 }
+
+export const useProductUpdate = () => {
+    return useMutation(async (data) => {
+        console.log(data);
+        return await API.put(`products/${data.id}`, data)
+    },
+    {
+        onSuccess: () => {
+            queryClient.invalidateQueries(['products']);
+        }
+    })
+}

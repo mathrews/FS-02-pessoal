@@ -84,16 +84,10 @@
   "products": [
     {
       "id": 1,
-      "name": "Tênis Nike Revolution 6 Next Nature Masculino",
-      "description": "Consequat culpa exercitation mollit nisi excepteur do do tempor laboris eiusmod irure consectetur.",
-      "ref": "38416711",
-      "brand": "nike",
-      "rate": 4.7,
-      "price": "219.90",
-      "sizes": "[39, 40, 41, 42, 43]",
-      "colors": "['#6FEEFF', '#FF6969', '#5E5E5E', '#6D70B7']",
-      "reviews": 90,
-      "categorie": "shooes"
+      "name": "Tenis Nike",
+      "category": "shooes",
+      "price": "199,90",
+      "ref": "38416711"
     },
     {
       "id": 2,
@@ -158,19 +152,6 @@
       "sizes": "[39, 40, 41, 42, 43]",
       "colors": "['#6FEEFF', '#FF6969', '#5E5E5E', '#6D70B7']",
       "reviews": 50,
-      "categorie": "shooes"
-    },
-    {
-      "id": 7,
-      "name": "Tênis Redley Long",
-      "description": "Consequat culpa exercitation mollit nisi excepteur do do tempor laboris eiusmod irure consectetur.",
-      "ref": "38416711",
-      "brand": "Redley",
-      "rate": 5,
-      "price": "199.90",
-      "sizes": "[39, 40, 41, 42, 43]",
-      "colors": "['#6FEEFF', '#FF6969', '#5E5E5E', '#6D70B7']",
-      "reviews": 1000,
       "categorie": "shooes"
     }
   ],
