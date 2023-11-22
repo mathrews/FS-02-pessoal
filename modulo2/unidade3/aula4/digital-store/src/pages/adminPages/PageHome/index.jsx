@@ -1,12 +1,12 @@
 const PageHome = () => {
   return (
     <>
-        <h1>Admin</h1>
-        <div className="mt-2 p-3 bg-primary w-3 border-round">
-          <h2>Tela de adm</h2>
-        </div>
+      <h1>Admin</h1>
+      <div className="card flex justify-content-center">
+       <h2>Charts</h2>
+      </div>
     </>
-  )
-}
+  );
+};
 
-export default PageHome
+export default PageHome;
