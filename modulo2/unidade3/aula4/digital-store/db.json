@@ -1,10 +1,10 @@
 {
   "users": [
     {
-      "level": 2,
+      "id": 1,
       "name": "teste",
-      "email": "teste@gmail.com",
-      "id": 1
+      "email": "lol@outlooh.com",
+      "level": 2
     }
   ],
   "banners": [
