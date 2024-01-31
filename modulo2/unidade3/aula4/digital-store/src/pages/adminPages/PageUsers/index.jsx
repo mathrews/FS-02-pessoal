@@ -66,8 +66,30 @@ const PageUsers = () => {
 
     const updateUser = (data) => {
         try {
-            console.log(data);
-            userUpdate.mutateAsync(data);
+            if (data.user_password == '') {
+                data = {
+                    user_id: data.user_id,
+                    user_name: data.user_name,
+                    user_email: data.user_email, 
+                    user_level: data.user_level
+                }
+            }
+            userUpdate.mutateAsync(data, {
+                onSuccess: (response) => {
+                    console.log(response.data);
+                    toast.current.show({
+                        severity: response.data.type,
+                        detail: response.data.message,
+                    });
+                },
+                onError: (response) => {
+                    console.log(response);
+                    toast.current.show({
+                        severity: response.data.type,
+                        detail: response.data.message,
+                    });
+                },
+            });
             editReset();
             setVisibleEdit(false);
         } catch (error) {
@@ -149,6 +171,7 @@ const PageUsers = () => {
                                 rounded
                                 icon={"pi pi-pencil"}
                                 onClick={() => {
+                                    console.log(rowData)
                                     editValue('user_id', rowData.user_id)
                                     editValue('user_name', rowData.user_name)
                                     editValue('user_email', rowData.user_email)
@@ -253,7 +276,7 @@ const PageUsers = () => {
                         type="text"
                         id="name"
                         placeholder="Digite seu nome"
-                        {...editData("user_name", { required: true })}
+                        {...editData("user_name")}
                     />
                     <label className="block mb-1" htmlFor="email">
                         Email
@@ -263,7 +286,7 @@ const PageUsers = () => {
                         type="text"
                         id="email"
                         placeholder="Digite seu email"
-                        {...editData("user_email", { required: true })}
+                        {...editData("user_email")}
                     />
                     <label className="block mb-1" htmlFor="email">
                         Password
@@ -274,7 +297,7 @@ const PageUsers = () => {
                         id="password"
                         placeholder="Digite seu password"
                         autoComplete="new-password"
-                        {...editData("user_password", { required: true })}
+                        {...editData("user_password")}
                     />
                     <label className="block mb-1" htmlFor="level">
                         Level
